@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/my_reset.css" />
     <link rel="stylesheet" href="./css/common.css" />
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js" defer></script>
   </head>
   <body>
     <header class="hd">
@@ -22,15 +22,15 @@
             ><img src="./img/logo.png" alt="공공기관 환경보전협회"
           /></a>
         </h1>
-        <div class="fun">
+        <nav class="fun">
           <a href="#">로그인</a>
           <a href="#">회원가입</a>
           <a href="#">이벤트</a>
           <a href="#">고객센터</a>
-        </div>
-        <div class="menu">
+        </nav>
+        <button class="ham">
           <p>메뉴</p>
-        </div>
+        </button>
       </div>
       <nav class="mw">
         <ul class="gnb">
@@ -205,32 +205,39 @@
           </div>
         </div>
       </section>
-      <section class="sec4">
-        <div class="sec4__inner mw">
-          <div class="sec4_left">
-            <img class="banner1" src="./img/sub_banner1.jpg" alt="서브배너1" />
-            <div class="banner_wrap1">
-              <p>배너제목</p>
+      <section class="sec4 mw">
+        <div class="card_baneer">
+          <article>
+            <img src="./img/sub_banner1.jpg" alt="서브배너1" />
+            <div class="card_text">
+              <h2>배너제목</h2>
               <p>
                 황금시대의 생생하며, 심장의 바이며, 없으면 가장 광야에서 피다.
                 없으면, 가진 품에 웅대한 있을 이상은 피가 무엇을 듣는다. 앞이
-                밥을 청춘의 위하여, 고행을 온갖 보라. 뜨고, 인생을 풀이 아니다.
-                붙잡아 봄바람을 무엇을 만천하의 풍부하게 꾸며 천자만홍이 청춘
-                이상의
+                밥을 청춘의 위하여,
               </p>
             </div>
-            <img class="banner2" src="./img/sub_banner1.jpg" alt="서브배너2" />
-            <div class="banner_wrap2">
-              <p>배너제목</p>
+          </article>
+          <article>
+            <img src="./img/sub_banner4.jpg" alt="서브배너1" />
+            <div class="card_text">
+              <h2>배너제목</h2>
               <p>
                 황금시대의 생생하며, 심장의 바이며, 없으면 가장 광야에서 피다.
                 없으면, 가진 품에 웅대한 있을 이상은 피가 무엇을 듣는다. 앞이
-                밥을 청춘의 위하여, 고행을 온갖 보라. 뜨고, 인생을 풀이 아니다.
-                붙잡아 봄바람을 무엇을 만천하의 풍부하게 꾸며 천자만홍이 청춘
-                이상의
+                밥을 청춘의 위하여,
               </p>
             </div>
+          </article>
+        </div>
+        <div class="img_list">
+          <div class="btns">
+            <button>image1</button>
+            <button>image2</button>
+            <button>image3</button>
+            <button>image4</button>
           </div>
+          <p class="imgs"><img src="./img/image1.jpg" alt="" /></p>
         </div>
       </section>
       <footer>

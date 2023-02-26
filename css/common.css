@@ -49,7 +49,7 @@
   font-size: 0.8rem;
 }
 .fun a::after {
-  content: '';
+  content: "";
   background-color: black;
   position: absolute;
   width: 1px;
@@ -60,7 +60,7 @@
 .fun a:last-child::after {
   display: none;
 }
-.menu {
+.ham {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,15 +147,23 @@ nav {
   justify-content: space-between;
 }
 .banner__inner a {
-  width: 31%;
+  width: calc(100% / 3 - 1rem);
+  height: 12vw;
+  overflow: hidden;
+  position: relative;
+  background-color: black;
 }
 .banner__inner > a > img {
-  padding: 1rem 0;
-  width: 100%;
-  transition: 0.3s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
 }
-.banner__inner img:hover {
-  transform: scale(1.1);
+.banner__inner a:hover img {
+  transform: translate(-50%, -50%) scale(1.25);
+  opacity: 0.5;
+  font: grayscale(1);
 }
 .sec3 {
   display: flex;
@@ -211,23 +219,81 @@ nav {
 .sec3_right__inner2 a p {
   font-size: 0.8rem;
 }
-.sec4__inner {
+.sec4 {
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
+  flex-wrap: wrap;
+  padding-bottom: 2rem;
 }
-.sec4_left {
+.sec4 > div {
+  width: calc(50% - 2rem);
+}
+.card_baneer {
   display: flex;
-  width: 50%;
+  justify-content: space-between;
 }
-.sec4_left img {
-  width: 300px;
-  height: 500px;
+.card_baneer article {
+  width: calc(50% - 1rem);
   position: relative;
+  padding-top: 50%;
+  overflow: hidden;
 }
-.banner_wrap1 {
+.card_baneer article img {
   position: absolute;
+  top: 0;
+  left: 0;
 }
+.card_baneer .card_text {
+  transition: 0.3s;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 2rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.card_baneer article:hover .card_text {
+  opacity: 1;
+  left: 0;
+}
+
+.img_list {
+  display: flex;
+}
+.img_list button {
+  width: 120px;
+  display: block;
+  padding: 0.5rem;
+  border-radius: 1rem 0 0 1rem;
+  border: none;
+  margin-bottom: 0.5rem;
+  transition: 0.3s;
+}
+.img_list button:hover {
+  background-color: orange;
+}
+
+.imgs {
+  position: relative;
+  padding-top: 50%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #999;
+}
+.imgs img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+}
+
 /* footer 시작 */
 .footer_wrap {
   background-color: rgba(0, 0, 0, 0.2);
@@ -245,7 +311,7 @@ nav {
   position: relative;
 }
 .nav_box a::after {
-  content: '';
+  content: "";
   background-color: black;
   width: 1px;
   height: 11px;
@@ -319,15 +385,27 @@ nav {
   }
 }
 @media (max-width: 800px) {
-  .menu {
+  .ham {
     order: 2;
     display: block;
   }
   .fun {
     display: none;
   }
-  nav {
+  .gnb {
     display: none;
+  }
+  .gnb.on {
+    border: 10px solid red;
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 80px);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .gnb.on {
   }
   .sec3 {
     flex-direction: column;
@@ -338,6 +416,10 @@ nav {
   .sec3_right {
     width: 100%;
     margin: 0;
+  }
+  .sec4 > div {
+    width: 100%;
+    padding-bottom: 2rem;
   }
   .footer_wrap {
     display: none;
